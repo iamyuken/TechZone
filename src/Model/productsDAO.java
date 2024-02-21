@@ -3,6 +3,8 @@ package Model;
 import java.sql.*;
 import java.util.ArrayList;
 
+import Resource.products;
+
 public class productsDAO {
     
     public ArrayList<ArrayList<String>> ar = new ArrayList<>();
@@ -13,6 +15,7 @@ public class productsDAO {
     {
         try{
             st = DBConnection.getConnection().createStatement();
+            pst=DBConnection.getConnection().prepareStatement("select * from products where ID = ?");
         }
         catch(Exception e)
         {
@@ -21,22 +24,38 @@ public class productsDAO {
     }
 
 
-    public ArrayList<ArrayList<String>> product()
+    public ArrayList<products> product()
     {
+        // ArrayList<ArrayList<products>> ar = new ArrayList<>();
+        ArrayList<products> br = new ArrayList<products>();
         try{
             ResultSet rs = st.executeQuery("select * from products");
             while(rs.next())
             {
-                ArrayList<String> br = new ArrayList<String>();
-                br.add(String.valueOf(rs.getInt(1)));
-                br.add(rs.getString(2));
-                br.add(String.valueOf(rs.getInt(3)));
-                ar.add(br);
+                br.add(new products(rs.getInt(1),rs.getString(2),rs.getInt(3)));
+                // ar.add(br);
             }
         }
         catch(Exception e){
             e.printStackTrace();
         }
-        return ar;
+        return br;
+    }
+
+    public products selectproduct(int n){
+        products product = new products();
+        try{
+            pst.setInt(1,n);
+            ResultSet rs = pst.executeQuery();
+            while(!rs.next()){
+                product.setid(rs.getInt(1));
+                product.setproductname(rs.getString(2));
+                product.setcount(rs.getInt(3));
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return product;
     }
 }

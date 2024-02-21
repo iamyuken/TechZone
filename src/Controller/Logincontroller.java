@@ -26,15 +26,16 @@ public class Logincontroller {
     {
         Loginview log = new Loginview();
         LoginDAO l = new LoginDAO();
+        // user use = new user();
         admincontroller admin = new admincontroller();
         usercontroller users = new usercontroller();
         user data=log.signin();
         data=l.signin(data);
-        if(user.getrole()!=null)
+        if(data.getrole()!=null)
         {
-            if(user.getrole().equals("User"))
+            if(data.getrole().equals("User"))
             users.productsinfo();
-            else if(user.getrole().equals("Admin"))
+            else if(data.getrole().equals("Admin"))
             // admin.view();
             System.out.print("Admin");
         }
@@ -49,8 +50,9 @@ public class Logincontroller {
     {
         LoginDAO log = new LoginDAO();
         Loginview l= new Loginview();
+        user use = new user();
         l.signupmail();
-        if(log.checkmail(user.getmail()))
+        if(log.checkmail(use.getmail()))
         signup();
         else{
             System.out.println("                                                 User Already Exists");

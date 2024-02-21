@@ -41,6 +41,7 @@ public class Loginview {
             sc.nextLine();
             f=true;
         }
+        user user = new user();
             System.out.print("Enter the Password :  ");
             String password = sc.nextLine();
             System.out.print("Enter the Name :  ");
@@ -56,8 +57,9 @@ public class Loginview {
             sc.nextLine();
             f=true;
         }
+        user use = new user();
         System.out.print("Enter the MailID :  ");
         String mail = sc.nextLine();
-        user.setmail(mail);
+        use.setmail(mail);
     }
 }

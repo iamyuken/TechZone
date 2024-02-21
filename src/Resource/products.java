@@ -2,37 +2,41 @@ package Resource;
 
 public class products {
     
-    private static int id;
-    private static String productname;
-    private static int count;
+    private int id;
+    private String productname;
+    private int count;
 
-    products(int Id,String Productname,int Count){
+    public products(int Id,String Productname,int Count){
         id=Id;
         productname=Productname;
         count=Count;
     }
 
-    public static int getid(){
+    public products(){
+            
+    }
+
+    public int getid(){
         return id;
     }
 
-    public static String getproductname(){
+    public String getproductname(){
         return productname;
     }
 
-    public static int getcount(){
+    public int getcount(){
         return count;
     }
 
-    public static void setid(int Id){
+    public void setid(int Id){
         id=Id;
     }
 
-    public static void setproductname(String Name){
+    public void setproductname(String Name){
         productname = Name;
     }
 
-    public static void setcount(int Count){
+    public void setcount(int Count){
         count=Count;
     }
 }

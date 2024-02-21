@@ -2,11 +2,12 @@ package View;
 
 import java.util.*;
 import java.util.ArrayList;
+import Resource.products;
 
 public class productsview {
     
     public Scanner sc = scanner.scan();
-    public void display(ArrayList<ArrayList<String>> a)
+    public void display(ArrayList<products> a)
     {
         System.out.printf("-----------------------------------------------------------------------------------------------------------------------------------%n");
         System.out.printf("                                                        PRODUCT DETAILS                                                %n");
@@ -16,8 +17,7 @@ public class productsview {
         System.out.printf("------------------------------------------------%n");
         for(int i=0;i<a.size();i++)
         {
-            ArrayList<String> b = new ArrayList<>(a.get(i));
-            System.out.printf("| %-5s | %-25s | %-8s |%n",b.get(0),b.get(1),b.get(2));
+            System.out.printf("| %-5s | %-25s | %-8s |%n",a.get(i).getid(),a.get(i).getproductname(),a.get(i).getcount());
         }
         System.out.printf("------------------------------------------------%n");
     }

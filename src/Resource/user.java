@@ -2,11 +2,11 @@ package Resource;
 
 public class user {
     
-    private static int id;
-    private static String name;
-    private static String mail;
-    private static String password;
-    private static String role;
+    private  int id;
+    private String name;
+    private String mail;
+    private String password;
+    private String role;
 
     public user(String Mail,String Password)
     {
@@ -22,7 +22,10 @@ public class user {
         password=Password;
         role=Role;
     }
-    
+    public user()
+    {
+
+    }
     public user(String Name,String Mail,String Password,String Role)
     {
         name=Name;
@@ -31,43 +34,43 @@ public class user {
         role=Role;
     }
 
-    public static int getid(){
+    public int getid(){
         return id;
     }
 
-    public static String getname(){
+    public String getname(){
         return name;
     }
 
-    public static String getmail(){
+    public String getmail(){
         return mail;
     }
 
-    public static String getpassword(){
+    public String getpassword(){
         return password;
     }
 
-    public static String getrole(){
+    public String getrole(){
         return role;
     }
 
-    public static void setid(int Id){
+    public void setid(int Id){
         id=Id;
     }
 
-    public static void setname(String Name){
+    public void setname(String Name){
         name=Name;
     }
 
-    public static void setmail(String Mail){
+    public void setmail(String Mail){
         mail=Mail;
     } 
 
-    public static void setpassword(String Password){
+    public void setpassword(String Password){
         password=Password;
     }
 
-    public static void setrole(String Role){
+    public void setrole(String Role){
         role=Role;
     }
 }
