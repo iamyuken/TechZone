@@ -1,6 +1,7 @@
 package Resource;
 
 public class Laptop {
+    private int id;
     private String brand;
     private String model;
     private String processor;
@@ -11,7 +12,8 @@ public class Laptop {
     private int price;
     private int count;
 
-    public Laptop(String brand, String model, String processor, String ram, String storage, String generation,String windows, int price, int count) {
+    public Laptop(int id,String brand, String model, String processor, String ram, String storage, String generation,String windows, int price, int count) {
+        this.id=id;
         this.brand = brand;
         this.model = model;
         this.processor = processor;
@@ -23,7 +25,16 @@ public class Laptop {
         this.count = count;
     }
 
-
+    public Laptop(){
+        
+    }
+    
+    public int getid() {
+        return id;
+    }
+    public void setid(int id) {
+        this.id = id;
+    }
     public String getbrand() {
         return brand;
     }

@@ -1,71 +1,82 @@
 package Resource;
 
-public class Fridge {
+public class Washing {
     private int id;
-    private String brandname;
+    private String brand;
     private String model;
-    private String capacity;
-    private String  doortype;
+    private String washingcapacity;
     private int price;
     private int count;
 
-
-    public Fridge(int id,String brandname, String model, String capacity, String doortype, int price, int count) {
+    
+    public Washing(int id,String brand, String model, String washingcapacity, int price, int count) {
         this.id=id;
-        this.brandname = brandname;
+        this.brand = brand;
         this.model = model;
-        this.capacity = capacity;
-        this.doortype = doortype;
+        this.washingcapacity = washingcapacity;
         this.price = price;
         this.count = count;
     }
 
-    public Fridge(){
-
+    public Washing(){
+        
     }
     
     public int getid() {
         return id;
     }
+
+
     public void setid(int id) {
         this.id = id;
     }
+
     public String getbrand() {
-        return brandname;
+        return brand;
     }
+
+
     public void setbrand(String brandname) {
-        this.brandname = brandname;
+        this.brand = brandname;
     }
+
+
     public String getmodel() {
         return model;
     }
+
+
     public void setmodel(String model) {
         this.model = model;
     }
-    public String getcapacity() {
-        return capacity;
+
+
+    public String getwashingcapacity() {
+        return washingcapacity;
     }
-    public void setcapacity(String capacity) {
-        this.capacity = capacity;
+
+
+    public void setwashingcapacity(String washingcapacity) {
+        this.washingcapacity = washingcapacity;
     }
-    public String getdoortype() {
-        return doortype;
-    }
-    public void setdoortype(String doortype) {
-        this.doortype = doortype;
-    }
+
+
     public int getprice() {
         return price;
     }
+
+
     public void setprice(int price) {
         this.price = price;
     }
+
     public int getcount() {
         return count;
     }
+
+
     public void setcount(int count) {
         this.count = count;
     }
 
-    
 }

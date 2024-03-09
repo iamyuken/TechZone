@@ -26,14 +26,12 @@ public class productsDAO {
 
     public ArrayList<products> product()
     {
-        // ArrayList<ArrayList<products>> ar = new ArrayList<>();
         ArrayList<products> br = new ArrayList<products>();
         try{
             ResultSet rs = st.executeQuery("select * from products");
             while(rs.next())
             {
                 br.add(new products(rs.getInt(1),rs.getString(2),rs.getInt(3)));
-                // ar.add(br);
             }
         }
         catch(Exception e){
@@ -47,7 +45,7 @@ public class productsDAO {
         try{
             pst.setInt(1,n);
             ResultSet rs = pst.executeQuery();
-            while(!rs.next()){
+            if(rs.next()){
                 product.setid(rs.getInt(1));
                 product.setproductname(rs.getString(2));
                 product.setcount(rs.getInt(3));

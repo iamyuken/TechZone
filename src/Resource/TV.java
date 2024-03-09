@@ -7,14 +7,24 @@ public class TV {
     private String displaysize;
     private int price;
     private int count;
+    private int id;
 
 
-    public TV(String Brand,String Model,String Displaysize,int Price,int Count){
+    public TV(int Id,String Brand,String Model,String Displaysize,int Price,int Count){
+        id=Id;
         brand=Brand;
         model=Model;
         displaysize=Displaysize;
         price=Price;
         count=Count;
+    }
+
+    public TV(){
+        
+    }
+
+    public int getid(){
+        return id;
     }
 
     public String getbrand(){
@@ -37,6 +47,10 @@ public class TV {
         return count;
     }
 
+    public void setid(int Id){
+        id=Id;
+    }
+    
     public void setbrand(String Brand){
         brand = Brand;
     }

@@ -2,7 +2,7 @@ package View;
 
 import java.util.*;
 import java.util.ArrayList;
-import Resource.products;
+import Resource.*;
 
 public class productsview {
     
@@ -22,16 +22,19 @@ public class productsview {
         System.out.printf("------------------------------------------------%n");
     }
 
-    public int selectproduct()
+    public int selectproduct(user data)
     {
+        if(data.getrole().equals("User"))
         System.out.print("Enter the ID to Select the Product you want to buy :  ");
+        else
+        System.out.print("Enter the ID to Update or delete the product :  ");
         int n=0;
         try{
             n=sc.nextInt();
         }
         catch(Exception e){
             System.out.print("Please Enter the proper number");
-            selectproduct();
+            selectproduct(data);
         }
         return n;
     }

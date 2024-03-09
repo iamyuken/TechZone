@@ -34,10 +34,9 @@ public class Logincontroller {
         if(data.getrole()!=null)
         {
             if(data.getrole().equals("User"))
-            users.productsinfo();
+            users.productsinfo(data);
             else if(data.getrole().equals("Admin"))
-            // admin.view();
-            System.out.print("Admin");
+            admin.productsinfo(data);
         }
         else{
             System.out.println("                                         User doesn't exists");
@@ -50,22 +49,22 @@ public class Logincontroller {
     {
         LoginDAO log = new LoginDAO();
         Loginview l= new Loginview();
-        user use = new user();
-        l.signupmail();
-        if(log.checkmail(use.getmail()))
-        signup();
+        user data = l.signupmail();
+        if(log.checkmail(data.getmail()))
+        signup(data);
         else{
             System.out.println("                                                 User Already Exists");
             System.out.println("                                              Signup with another mailId");
-            signupcheck();
+            // signupcheck();
+            welcome();
         }
     }
 
-    public void signup()
+    public void signup(user data)
     {
         LoginDAO log = new LoginDAO();
         Loginview l = new Loginview();
-        user data=l.signup();
+        data=l.signup(data);
         log.signup(data);
         welcome();
     }

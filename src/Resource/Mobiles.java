@@ -1,6 +1,7 @@
 package Resource;
 
 public class Mobiles {
+    private int id;
     private String brand;
     private String model;
     private String ram;
@@ -11,7 +12,8 @@ public class Mobiles {
     private int count;
 
 
-    public Mobiles(String brand, String model, String ram, String storage, String simtype, String cellulartechnology,int price, int count) {
+    public Mobiles(int id,String brand, String model, String ram, String storage, String simtype, String cellulartechnology,int price, int count) {
+        this.id=id;
         this.brand = brand;
         this.model = model;
         this.ram = ram;
@@ -21,52 +23,62 @@ public class Mobiles {
         this.price = price;
         this.count = count;
     }
-    public String getBrand() {
+
+    public Mobiles(){
+        
+    }
+    public int getid() {
+        return id;
+    }
+    public void setid(int id) {
+        this.id = id;
+    }
+    public String getbrand() {
         return brand;
     }
-    public void setBrand(String brand) {
+    public void setbrand(String brand) {
         this.brand = brand;
     }
-    public String getModel() {
+    public String getmodel() {
         return model;
     }
-    public void setModel(String model) {
+    public void setmodel(String model) {
         this.model = model;
     }
-    public String getRam() {
+    public String getram() {
         return ram;
     }
-    public void setRam(String ram) {
+    public void setram(String ram) {
         this.ram = ram;
     }
-    public String getStorage() {
+    public String getstorage() {
         return storage;
     }
-    public void setStorage(String storage) {
+    public void setstorage(String storage) {
         this.storage = storage;
     }
-    public String getSimtype() {
+    public String getsimtype() {
         return simtype;
     }
-    public void setSimtype(String simtype) {
+    public void setsimtype(String simtype) {
         this.simtype = simtype;
     }
-    public String getCellulartechnology() {
+    public String getcellulartechnology() {
         return cellulartechnology;
     }
-    public void setCellulartechnology(String cellulartechnology) {
+    public void setcellulartechnology(String cellulartechnology) {
         this.cellulartechnology = cellulartechnology;
     }
-    public int getPrice() {
+    public int getprice() {
         return price;
     }
-    public void setPrice(int price) {
+    public void setprice(int price) {
         this.price = price;
     }
-    public int getCount() {
+    public int getcount() {
         return count;
     }
-    public void setCount(int count) {
+    public void setcount(int count) {
         this.count = count;
     }
 
